@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="ContentDescription">
+
+    <TextView
+        android:id="@+id/appBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_blue_light"
+        android:padding="@dimen/spacing_sm_2"
+        android:text="@string/currency_converter_title"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/currencyExchangeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_sm_2"
+        android:layout_marginTop="@dimen/spacing_sm_2"
+        android:text="@string/currency_exchange_tittle"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBar" />
+
+    <ImageView
+        android:id="@+id/incomeImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/spacing_sm_2"
+        android:layout_marginTop="@dimen/spacing_sm_2"
+        android:src="@drawable/ic_buy_currency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/currencyExchangeTitle" />
+
+    <TextView
+        android:id="@+id/buyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_sm_2"
+        android:text="@string/buy_currency"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/incomeImage"
+        app:layout_constraintStart_toEndOf="@id/incomeImage"
+        app:layout_constraintTop_toTopOf="@+id/incomeImage" />
+
+    <Spinner
+        android:id="@+id/buyCurrencyType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_sm_2"
+        app:layout_constraintBottom_toBottomOf="@id/incomeImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/incomeImage" />
+
+    <EditText
+        android:id="@+id/buyCurrencyAmountEdit"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_sm_3"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/incomeImage"
+        app:layout_constraintEnd_toStartOf="@id/buyCurrencyType"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/buyTitle"
+        app:layout_constraintTop_toTopOf="@id/incomeImage"
+        tools:ignore="LabelFor" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/spacing_sm_3"
+        android:layout_marginTop="@dimen/spacing_sm_2"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/incomeImage" />
+
+    <ImageView
+        android:id="@+id/outcomeImage"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="@dimen/spacing_sm_2"
+        android:layout_marginTop="@dimen/spacing_sm_2"
+        android:src="@drawable/ic_sell_currency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/sellTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_sm_2"
+        android:text="@string/sell_currency"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/outcomeImage"
+        app:layout_constraintStart_toEndOf="@id/outcomeImage"
+        app:layout_constraintTop_toTopOf="@+id/outcomeImage" />
+
+    <Spinner
+        android:id="@+id/sellCurrencyType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_sm_2"
+        app:layout_constraintBottom_toBottomOf="@id/outcomeImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/outcomeImage"
+        tools:text="EUR" />
+
+    <EditText
+        android:id="@+id/sellCurrencyAmountEdit"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_sm_3"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@id/outcomeImage"
+        app:layout_constraintEnd_toStartOf="@id/sellCurrencyType"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/sellTitle"
+        app:layout_constraintTop_toTopOf="@id/outcomeImage"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/buyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm_2"
+        android:background="@android:color/holo_blue_light"
+        android:text="@string/buy_currency"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sellButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/outcomeImage" />
+
+    <Button
+        android:id="@+id/sellButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm_2"
+        android:background="@android:color/holo_blue_light"
+        android:text="@string/sell_currency"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buyButton"
+        app:layout_constraintTop_toBottomOf="@id/outcomeImage" />
+
+    <View
+        android:id="@+id/contentDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/spacing_sm_2"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buyButton" />
+
+    <TextView
+        android:id="@+id/balanceHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_sm_2"
+        android:text="@string/balance"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentDivider" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/balanceRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/elevation_sm_2"
+        android:layout_marginTop="@dimen/spacing_sm_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/balanceHeader"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_currency_wallet" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
